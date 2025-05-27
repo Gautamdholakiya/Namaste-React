@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the header */
+.header {
+    background-color: #a9a1a1;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.logo img {
+    height: 100px; /* Adjust height as per your logo size */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #040404;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+
+.restrocard {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.restaurant-card {
+    width: 30%; /* Adjust card width as per your design */
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.restaurant-img {                           
+    flex: 1;
+    max-width: 300px; /* Adjust image max-width as per your design */
+}             
+.restaurant-img img {        
+    width: 100%;         
+    border-radius: 8px;
+}                    
+
+.restaurant-details {                                                      
+    flex: 2;           
+    padding: 0 20px;                                
+}
+
+.restaurant-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.restaurant-rating {
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700; /* Gold color */
+}
+
+.stars {
+    font-size: 18px;
+    color: #ffd700;
+}
+
+.restaurant-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.delivery-time {
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .search-bar button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #45a049;
+  }
