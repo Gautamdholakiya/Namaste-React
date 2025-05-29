@@ -10,40 +10,43 @@ const BodyConponent = () => {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.2610066&lng=72.85007089999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
     const jsonData = await data.json()
-    return  setListOfRestorant(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    return setListOfRestorant(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
   useEffect(() => {
     fetchData()
-  },[])
+  }, [])
 
   return listOfRestourant?.data?.length === 0 ? <h1>Loading...</h1> : (
-    <div className="body">
-      <div>
-        <button
-          onClick={ () => 
-          { 
-            let filterData = listOfRestourant.filter((res) => {
-              return(res.info.avgRating > 4.2)
-            })
-            setListOfRestorant(filterData)
-          }
-        }
-        >
-          top restorant
-        </button>
-        <input type="text" placeholder="Search restaurants..." value={serchtext} onChange={(e) => {
-          setSerchText(e.target.value)
-        }}/>
-        <button onClick={() => {
-          console.log(serchtext)
-          let serchData = listOfRestourant.filter( (data) => {
-            return data.info.name.toLowerCase().includes(serchtext.toLowerCase()) }
-          )
+    <div className="body p-2">
+      <div className="flex justify-between items-center p-2">
+        <div>
+          <button className="border-2 bg-black text-white p-2 rounded-xl cursor-pointer"
+            onClick={() => {
+              let filterData = listOfRestourant.filter((res) => {
+                return (res.info.avgRating > 4.2)
+              })
+              setListOfRestorant(filterData)
+            }
+            }
+          >
+            Top restorant
+          </button>
+        </div>
+        <div>
+          <input className="border-1 bg-black text-white p-1 rounded-xl cursor-pointer" type="text" placeholder="Search restaurants..." value={serchtext} onChange={(e) => {
+            setSerchText(e.target.value)
+          }} />
+          <button className="border-2 bg-black text-white p-1.5 rounded-xl cursor-pointer" onClick={() => {
+            let serchData = listOfRestourant.filter((data) => {
+              return data.info.name.toLowerCase().includes(serchtext.toLowerCase())
+            }
+            )
             return setListOfRestorant(serchData)
-        }}>Enter</button>
+          }}>Enter</button>
+        </div>
       </div>
-      <div className="restrocard">
+      <div className="restrocard flex flex-wrap justify-between items-center">
         {listOfRestourant.map((restorentalldata) => {
           return (
             <RestroComponent

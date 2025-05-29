@@ -1,31 +1,25 @@
 import { LOGO_URL } from "../utiils/constant";
+import { Link } from 'react-router-dom';
+
 
 const HeaderComponent = () => {
   return (
-    <div className="header">  
-      <div className="logo">
-        <img src={LOGO_URL} />
-      </div>
+    <header className="flex justify-between items-center w-[100%] bg-black text-white p-5">
+    <div className="w-[50%]">
+        <span className="brand-icon">🚀</span>
+        <span className="brand-name">NextGen</span>
+    </div>
+    <div className="w-[50%]">
       <nav>
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Food</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-        </ul>
+          <ul className="flex justify-between">
+              <Link to={"/"}><li>Home</li></Link>
+              <Link to={"/about"}><li>About</li></Link>
+              <Link to={"/contact"}><li>Contact</li></Link>
+              <li><a href="/services">Services</a></li>
+          </ul>
       </nav>
     </div>
+</header>
   );
 };
 
