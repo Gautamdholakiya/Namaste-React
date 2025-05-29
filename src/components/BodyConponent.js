@@ -24,7 +24,7 @@ const BodyConponent = () => {
           <button className="border-2 bg-black text-white p-2 rounded-xl cursor-pointer"
             onClick={() => {
               let filterData = listOfRestourant.filter((res) => {
-                return (res.info.avgRating > 4.2)
+                return (res.info.avgRating > 4.5)
               })
               setListOfRestorant(filterData)
             }
