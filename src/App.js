@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import HeaderComponent from "./components/HeaderComponent";
 import BodyConponent from "./components/BodyConponent";
 import About from "./components/About";
+import Footer from "./components/Footer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const Appcomponent = () => {
@@ -10,22 +11,24 @@ const Appcomponent = () => {
     <div>
       <HeaderComponent />
       <Outlet></Outlet>
+      <Footer/>
     </div>
   );
 };
 
+
 const appRouter = createBrowserRouter([
   {
-    path : "/",
-    element : <Appcomponent></Appcomponent>,
-    children : [
+    path: "/",
+    element: <Appcomponent></Appcomponent>,
+    children: [
       {
-        path : "/",
-        element : <BodyConponent></BodyConponent>
-      },
+        path: "/",
+        element: <BodyConponent></BodyConponent>
+        },
       {
-        path : "/about",
-        element : <About></About>
+      path: "/about",
+      element: <About></About>
       }
     ]
   }
@@ -33,4 +36,4 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);

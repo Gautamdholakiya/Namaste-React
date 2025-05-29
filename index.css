@@ -1,26 +1,28 @@
-* {
+@import "tailwindcss";
+
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 /* Basic styling for the header */
-.header {
+/* .header {
     background-color: #a9a1a1;
     color: #fff;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
 
-
+/* 
 .logo img {
-    height: 100px; /* Adjust height as per your logo size */
-}
+    height: 100px; 
+} */
 
-nav ul {
+/* nav ul {
     list-style-type: none;
     margin: 10px;
     padding: 10px;
@@ -46,7 +48,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffd700; /* Change color on hover */
+    color: #ffd700; 
 }
 
 
@@ -57,7 +59,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
 }
 .restaurant-card {
-    width: 30%; /* Adjust card width as per your design */
+    width: 30%; 
     margin: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -69,7 +71,7 @@ nav ul li a:hover {
 }
 .restaurant-img {                           
     flex: 1;
-    max-width: 300px; /* Adjust image max-width as per your design */
+    max-width: 300px; 
 }             
 .restaurant-img img {        
     width: 100%;         
@@ -93,7 +95,7 @@ nav ul li a:hover {
 .rating {
     font-size: 18px;
     font-weight: bold;
-    color: #ffd700; /* Gold color */
+    color: #ffd700; 
 }
 
 .stars {
@@ -139,4 +141,4 @@ nav ul li a:hover {
   
   .search-bar button:hover {
     background-color: #45a049;
-  }
+  } */
