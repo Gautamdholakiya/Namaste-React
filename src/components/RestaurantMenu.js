@@ -14,10 +14,10 @@ const RestaurantMenu = () => {
     }, [])
 
     const fetchData = async () => {
-        const data = await fetch(RESTAURANT_MENU_URL)
+        const data = await fetch(RESTAURANT_MENU_URL+resID.id)
         const jsonData = await data.json()
 
-        SetRestaurantMenu(jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card?.itemCards)
+        SetRestaurantMenu(jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
     }
 
     return (
