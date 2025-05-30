@@ -1,11 +1,11 @@
-import { CDN_URL1 } from "../utiils/constant";
+import { MENU_IMAGE } from "../utiils/constant";
 
 const MenuCard = (props) => {
+
   const { name, price, description, imageId } = props.menuData.card.info;
   // const{avgRating} = props.menuData.card.info.rating.rating
-  console.log(props.menuData.card);
 
-  const imageURL = CDN_URL1 + imageId;
+  const imageURL = MENU_IMAGE + imageId;
 
   return (
     <div>

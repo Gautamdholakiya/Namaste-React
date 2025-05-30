@@ -1,5 +1,6 @@
 import RestroComponent from "./RestroComponent";
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 const BodyConponent = () => {
   let [listOfRestourant, setListOfRestorant] = useState([]);
@@ -46,13 +47,12 @@ const BodyConponent = () => {
           }}>Enter</button>
         </div>
       </div>
-      <div className="restrocard flex flex-wrap justify-between items-center">
+      <div className="restrocard flex flex-wrap justify-center items-center">
         {listOfRestourant.map((restorentalldata) => {
           return (
-            <RestroComponent
-              key={restorentalldata.info.id}
-              resData={restorentalldata}
-            />
+            <Link key={restorentalldata.info.id} to={"/restaurant/" + restorentalldata.info.id}>
+              <RestroComponent resData={restorentalldata} />
+            </Link>
           );
         })}
       </div>
