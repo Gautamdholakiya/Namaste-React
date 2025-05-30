@@ -1,0 +1,38 @@
+import { useEffect, useState } from "react"
+import { RESTAURANT_MENU_URL } from "../utiils/constant"
+import MenuCard from "./MenuCard"
+import { useParams } from "react-router-dom"
+
+const RestaurantMenu = () => {
+
+    const [restaurantMenu, SetRestaurantMenu] = useState([])
+
+    const resID = useParams()
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = async () => {
+        const data = await fetch(RESTAURANT_MENU_URL+resID.id)
+        const jsonData = await data.json()
+
+        SetRestaurantMenu(jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
+    }
+
+    return (
+        <div>
+            <div>
+                <h1 className="p-3 text-3xl text-black font-bold border-2"> Restaurant Name</h1>
+                <h1 className="text-2xl p-3 text-amber-950 font-bold "> Recommand Item</h1>
+            </div>
+
+            {restaurantMenu.map((data) => {
+                // console.log(data)
+                return <MenuCard key={data?.card?.info?.id} menuData={data}></MenuCard>
+            })}
+        </div>
+    )
+}
+
+export default RestaurantMenu

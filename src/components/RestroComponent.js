@@ -1,12 +1,12 @@
-import { CDN_URL } from "../utiils/constant";
+import { RESTAURANT_LIST_IMAGE_URL } from "../utiils/constant";
 
 const RestroComponent = (props) => {
   const { cloudinaryImageId, name, avgRating, cousing, deliveryTime } = props.resData.info
 
-  const imageId = CDN_URL + cloudinaryImageId
+  const imageId = RESTAURANT_LIST_IMAGE_URL + cloudinaryImageId
 
   return (
-    <div className="w-[30%] p-1 cursor-pointer" >
+    <div className="border-s-0  my-0.5 w-60 h-80 p-1 cursor-pointer" >
       <img className="object-cover h-[200px] w-[100%] rounded-xl" src={imageId} alt="Food Image" />
       <div>
         <h2>{name}</h2>

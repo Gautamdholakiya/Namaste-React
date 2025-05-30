@@ -1,5 +1,6 @@
 import RestroComponent from "./RestroComponent";
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 const BodyConponent = () => {
   let [listOfRestourant, setListOfRestorant] = useState([]);
@@ -7,7 +8,7 @@ const BodyConponent = () => {
 
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.2610066&lng=72.85007089999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
     const jsonData = await data.json()
     return setListOfRestorant(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -24,7 +25,7 @@ const BodyConponent = () => {
           <button className="border-2 bg-black text-white p-2 rounded-xl cursor-pointer"
             onClick={() => {
               let filterData = listOfRestourant.filter((res) => {
-                return (res.info.avgRating > 4.2)
+                return (res.info.avgRating > 4.5)
               })
               setListOfRestorant(filterData)
             }
@@ -46,13 +47,12 @@ const BodyConponent = () => {
           }}>Enter</button>
         </div>
       </div>
-      <div className="restrocard flex flex-wrap justify-between items-center">
+      <div className="restrocard flex flex-wrap justify-center items-center">
         {listOfRestourant.map((restorentalldata) => {
           return (
-            <RestroComponent
-              key={restorentalldata.info.id}
-              resData={restorentalldata}
-            />
+            <Link key={restorentalldata.info.id} to={"/restaurant/" + restorentalldata.info.id}>
+              <RestroComponent resData={restorentalldata} />
+            </Link>
           );
         })}
       </div>
