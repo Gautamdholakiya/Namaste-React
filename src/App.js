@@ -12,7 +12,7 @@ const Appcomponent = () => {
     <div>
       <HeaderComponent />
       <Outlet></Outlet>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
@@ -26,17 +26,18 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <BodyConponent></BodyConponent>
-        },
+      },
       {
-      path: "/about",
-      element: <About></About>
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu></RestaurantMenu>
       }
     ]
   },
-  {
-    path :"/restaurant/:id",
-    element : <RestaurantMenu></RestaurantMenu>
-  }
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
