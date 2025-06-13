@@ -17,6 +17,7 @@ const MenuCard = (props) => {
           <p>{description}</p>
         </div>
         <div className="w-[20%]  p-1">
+          <button className="absolute bg-black p-1 rounded-b-sm text-white">  Add + </button>
           <img
             className="object-cover w-[100%] rounded-xl"
             src={imageURL}
